@@ -1,30 +1,43 @@
 import React from "react"
-import styles from "./about-css-modules.module.css"
 import Container from "../components/container"
+import styled from "@emotion/styled"
 
-console.log(styles)
+const UserBase = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto 12px auto;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+const Avatar = styled.img`
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  margin: 0;
+`
+const Description = styled.div`
+  flex: 1;
+  margin-left: 18px;
+  padding: 12px;
+`
+const Username = styled.h2`
+  margin: 0 0 12px 0;
+  padding: 0;
+  color: #e392d0;
+`
+const Excerpt = styled.p`
+  margin: 0;
+`
 
-// function user(props) {
-//   return (
-//     <div className={styles.user}>
-//       <img src={props.avatar} className={styles.avatar} alt="" />
-//       <div className={styles.description}>
-//         <h2 className={styles.username}>{props.username}</h2>
-//         <p className={styles.excerpt}>{props.excerpt}</p>
-//       </div>
-//     </div>
-//   )
-// }
-
-const User = ({ avatar, username, excerpt, sex }) => (
-  <div className={styles.user}>
-    <img src={avatar} className={styles.avatar} alt="" />
-    <div className={styles.description}>
-      <h2 className={styles.username}>{username}</h2>
-      <span>{sex}</span>
-      <p className={styles.excerpt}>{excerpt}</p>
-    </div>
-  </div>
+const User = ({ avatar, username, excerpt }) => (
+  <UserBase>
+    <Avatar src={avatar} alt="" />
+    <Description>
+      <Username>{username}</Username>
+      <Excerpt>{excerpt}</Excerpt>
+    </Description>
+  </UserBase>
 )
 
 export default function About() {
