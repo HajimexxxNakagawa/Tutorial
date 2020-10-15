@@ -12,6 +12,7 @@ export default function Home({ data }) {
           css={css`
             display: inline-block;
             border-bottom: 1px solid;
+            color: red;
           `}
         >
           Amazing Pandas Eating Things
